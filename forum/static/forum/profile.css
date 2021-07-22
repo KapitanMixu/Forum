@@ -1,0 +1,12 @@
+.profile {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.profile__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 60%;
+}

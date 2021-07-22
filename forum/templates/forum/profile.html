@@ -1,0 +1,17 @@
+{% extends 'forum/main.html' %}
+{% block content %}
+    <main class="profile">
+        <div class="profile__wrapper">
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+            <h2>{{ userprofile.username }}</h2>
+            {% if userprofile.role == 'R' %}
+                <h4>Rola: Redaktor</h4>
+            {% else %}
+                <h4>Czytelnik</h4>
+            {% endif %}
+            <p>Opis: {{ userprofile.desc }}</p>
+        </div>
+    </main>
+
+{% endblock content %}

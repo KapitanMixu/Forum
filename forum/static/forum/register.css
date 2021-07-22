@@ -1,0 +1,32 @@
+.register {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.register__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 60%;
+}
+
+.register__form > p > textarea, input {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.register__form > ul > li > label {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.register__form > ul > li > label > input {
+    width: auto;
+    margin: 0 10px;
+}
+
+

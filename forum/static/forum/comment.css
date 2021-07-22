@@ -1,0 +1,15 @@
+.writeComment {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.writeComment__wrapper {
+    width: 60%;
+}
+
+.writeComment__form > textarea {
+    width: 100%;
+    margin-top: 10px;
+}
+

@@ -1,0 +1,18 @@
+{% extends 'forum/main.html' %}
+{% block content %}
+
+<main class="main__page">
+    <h1 class="intro">Witamy na Mix Seriali</h1>
+
+    {% if latest_post_list %}
+        <div class="list">
+            {% for post in latest_post_list %}
+                <a href="{% url 'forum:detail' post.id %}"><div class="list__item">{{ post.title}}</div></a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Nie ma dostępnych postów</p>
+    {% endif %}
+</main>
+
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'forum/main.html' %}
+{% block content %}
+    <main class="main__page">
+            <h1>Wyniki wyszukiwania</h1>
+            <div class="list">
+                {% for post in object_list %}
+                    <a href="{% url 'forum:detail' post.id %}">
+                        <div class="list__item">{{ post.title }}</div>
+                    </a>
+                {% endfor %}
+            </div>
+    </main>
+{% endblock content %}

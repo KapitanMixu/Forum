@@ -1,0 +1,32 @@
+{% extends 'forum/main.html' %}
+{% load static %}
+{% block content %}
+
+    <main class="post">
+        <article class="post__wrapper">
+            <h1 class="post__title">{{ post.title }}</h1>
+
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+            <p class="post__description">{{ post.main_text }}</p>
+            <div>Autor: <a class="link" href="{% url 'forum:profile' post.author.id %}">{{ post.author }}</a></div>
+            <p>Data: <span class="post__date">{{ post.pub_date|date:'d-m-Y' }}</span></p>
+            <p class="post__ratingsWrapper">Średnia ocen: <span class="post__ratings">{{ post.rate }}</span><img
+                    class="post__star" src="{% static 'forum/images/star.png' %}"/></p>
+            {% if request.user.is_authenticated %}
+                <a class="button" href="{% url 'forum:comment' post.id %}">Skomentuj</a>
+                <a class="button" href="{% url 'forum:rating' post.id %}">Oceń</a>
+            {% endif %}
+            <hr style="margin-top: 30px">
+            <h2>Komentarze</h2>
+            {% for comment in comments %}
+                {% if comment.main_post == post %}
+                    <div class="comment">
+                        <a class="link" href="{% url 'forum:profile' comment.author.id %}">{{ comment.author }}</a>
+                        <p class="comment__text">{{ comment.comment_text }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </article>
+    </main>
+{% endblock content %}

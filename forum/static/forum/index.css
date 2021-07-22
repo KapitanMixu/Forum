@@ -1,0 +1,35 @@
+.main__page {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.intro {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #845ec2;
+}
+
+.list {
+    width:60%;
+}
+
+.list__item {
+    border: 1px solid black;
+    border-radius: 16px;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 250ms ease-in-out;
+    background-color: rgba(0,0,0, 0.05);
+    letter-spacing: 1px;
+}
+
+.list__item:hover {
+    border: 1px solid black;
+    background-color: rgba(255,255,255, 1);
+}

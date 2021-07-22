@@ -1,0 +1,16 @@
+{% extends 'forum/main.html' %}
+{% block content %}
+    <main class="register">
+
+    <div class="register__wrapper">
+        <h1>Login</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="button" type="submit" value="Login">
+        </form>
+        <p>Nie masz konta?<a class="header__item button" href="{% url 'forum:register' %}">Stwórz konto</a></p>
+    </div>
+    </main>
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+.writeRating {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.writeRating__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 60%;
+}
+
+.writeRating__form > ul > li > label  {
+    display: flex;
+    align-items: center;
+}
+
+.writeRating__form > ul > li > label > input {
+    width: auto;
+    margin-right: 10px;
+}

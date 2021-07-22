@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.link {
+    font-weight: bold;
+    color: rgba(132,94,194, 1);
+    transition: all 250ms ease-in-out;
+}
+
+.link:hover {
+    color: rgba(132,94,194,0.8)
+}
+
+.button {
+    padding: 10px 15px;
+    border-radius: 16px;
+    background: #845ec2;
+    color: white;
+    font-weight: bold;
+    transition: all 250ms ease-in-out;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #ffdf6b;
+    color: black;
+}
+
+input, textarea {
+    border-radius: 16px;
+    border: 1px solid #845ec2;
+    padding: 5px 10px;
+    outline: 0;
+    resize: none;
+}
+
+textarea {
+    padding: 15px 15px;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid #ffdf6b;
+}
+
+ul {
+    list-style: none;
+}

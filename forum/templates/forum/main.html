@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" href="{% static 'forum/header.css' %}">
+<link rel="stylesheet" href="{% static 'forum/globals.css' %}">
+<link rel="stylesheet" href="{% static 'forum/index.css' %}">
+<link rel="stylesheet" href="{% static 'forum/detail.css' %}">
+<link rel="stylesheet" href="{% static 'forum/comment.css' %}">
+<link rel="stylesheet" href="{% static 'forum/making.css' %}">
+<link rel="stylesheet" href="{% static 'forum/register.css' %}">
+<link rel="stylesheet" href="{% static 'forum/profile.css' %}">
+<link rel="stylesheet" href="{% static 'forum/rating.css' %}">
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edges">
+        <title>Mix Seriali</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+    <header class="header">
+        <a  href="{% url 'forum:index'%}"><img class="logo"  src="{% static 'forum/images/logo.png'%}"></a>
+        <div class="header__account">
+            {% if request.user.is_authenticated %}
+                <p class="header__item ">Zalogowany jako: <a class="link" href="{% url 'forum:profile' request.user.id %}">{{ request.user }}</a></p>
+                <a class="header__item button" href="{% url 'forum:logout'%}">Wyloguj</a>
+                {% if request.user.is_superuser %}
+                    <a class="header__item button" href="/admin">Panel administracyjny</a>
+                {% endif %}
+            {% else %}
+                <a class="header__item button" href="{% url 'forum:login'%}">Zaloguj</a>
+            {% endif %}
+            {% if request.user.role == 'R' %}
+                <a class="header__item button" href ="{% url 'forum:making' %}">Stwórz post</a>
+            {% endif %}
+            <a class="header__item button" href="{% url 'forum:register'%}">Stwórz konto</a>
+            <form action="{% url 'forum:search' %}" method="get">
+                <input class="search" name="q" type="text" placeholder="Wyszukaj...">
+            </form>
+        </div>
+    </header>
+        <div class="container">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
+</html>

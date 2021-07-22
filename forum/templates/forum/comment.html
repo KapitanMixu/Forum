@@ -1,0 +1,19 @@
+{% extends 'forum/main.html' %}
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <section class="writeComment">
+           <div class="writeComment__wrapper">
+               <h1>Napisz komentarz:</h1>
+               <h2>{{ pk.title }}</h2>
+
+               <form class="writeComment__form" action="" method="POST">
+                   {% csrf_token %}
+                   {{ form }}
+                   <input class="button" type="submit" value="Zatwierdź">
+               </form>
+               {% else %}
+               <h1>NIE JESTEŚ ZALOGOWANY</h1>
+           </div>
+        </section>
+    {% endif %}
+{% endblock content %}

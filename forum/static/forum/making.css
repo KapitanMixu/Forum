@@ -1,0 +1,21 @@
+.createPost {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.createPost__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 60%;
+}
+
+.createPost__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.createPost__form > label {
+    margin: 10px 0;
+}

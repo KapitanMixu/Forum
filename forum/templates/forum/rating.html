@@ -1,0 +1,13 @@
+{% extends 'forum/main.html' %}
+{% block content %}
+    <main class="writeRating">
+        <div class="writeRating__wrapper">
+            <h1>Wystaw ocenę</h1>
+            <form class="writeRating__form" method="POST" action="" name="given_rate">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="button" type="submit" value="Zatwierdź">
+            </form>
+        </div>
+    </main>
+{% endblock content %}

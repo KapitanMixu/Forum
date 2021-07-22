@@ -1,0 +1,14 @@
+{% extends 'forum/main.html' %}
+{% block content %}
+<main class="createPost">
+    <div class="createPost__wrapper">
+        <h2>Napisz post</h2>
+
+        <form class="createPost__form" method="POST" action="">
+            {% csrf_token %}
+            {{ form }}
+            <input class="button" type="submit" value="Zatwierdź">
+        </form>
+    </div>
+</main>
+{% endblock content %}
