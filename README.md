@@ -1,3 +1,3 @@
 # Forum
-Forum about series
-Link to website: http://mkluk.pythonanywhere.com/forum/
+Forum about series made with Django.
+
